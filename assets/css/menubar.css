@@ -1,22 +1,3 @@
-/*#######################################
-        Menu bar configuration
-#########################################*/
-:root {
-  --menu-background: #98C1D9;                             /* Menu background color */
-  --menu-secondary: #293241;                              /* Color of hovered tabs and active links */
-  --menu-text-color: #ffffff;                             /* Menu font color */
-  --menu-position: relative;                                /* Position of menu on the page */
-  --menu-border-radius: 0px;                                /* Change this value to add rounded corners to menu */
-  --dropdown-background: #ffffff;                         /* Color of first level dropdown background */
-  --dropdown-text-color: #000000;                         /* Dropdown item text color on desktop */
-  --font-family: "Trebuchet MS", Helvetica, sans-serif;     /* https://www.w3schools.com/cssref/css_websafe_fonts.asp */
-  --font-weight: "normal";                                  /* Change font weight to bold */
-  --font-size: 15px;                                        /* Menu item font size */
-  --mobile-menu-icon-hover: #1d242f;                      /* Color of icon hover when browser is shrunk to phone size */
-}/*#######################################
-        End Configuration
-##########################################*/
-
 /* Main wrapper class for menu bar */
 nav.navbar-custom { 
  background: var(--menu-background); 
@@ -105,7 +86,7 @@ nav.navbar-custom span.badge {
 /* New notification badge color */
 nav.navbar-custom span.badge.new { 
     background: var(--menu-secondary);  
-    color: var(--menu-text-color);; 
+    color: var(--menu-text-color); 
 }
 
 /* Media queries for smaller devices */

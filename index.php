@@ -2,6 +2,7 @@
     <head>
         <!-- CSS -->
         <link rel="stylesheet" type="text/css" href="./assets/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="./assets/css/menubar-config.css">
         <link rel="stylesheet" type="text/css" href="./assets/css/menubar.css">
         <!-- Javascript -->
         <script src="./assets/js/jquery.min.js"></script>
