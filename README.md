@@ -1,3 +1,4 @@
-# Navbar
+appengine-php-guestbook
+================================
 
-Navigation bar
+Guestbook demo for Google App Engine that uses PHP
