@@ -76,11 +76,11 @@
 
 <script>
 $(document).ready(function() {
-  $('.dropdown-submenu a.menu').on("click", function(e) {
-    $(this).next('ul').toggle();
-    e.stopPropagation();
-    e.preventDefault();
-  });
+    $('.dropdown-submenu a.menu').on("click", function(e) {
+        $(this).next('ul').toggle();
+        e.stopPropagation();
+        e.preventDefault();
+    });
 });
 
 $('.nav a.item').click(function () {

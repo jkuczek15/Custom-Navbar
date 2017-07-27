@@ -29,10 +29,6 @@ nav.navbar-custom ul.navbar-nav a {
     border-color: @menu-primary;    /* Border color of menu tabs */
 }
 
-nav.navbar-custom ul.navbar-nav a {
-    border-color: @menu-primary;    /* Border color of menu tabs */
-}
-
 /* Color of activated links, hover links, and dropdown divider */
 nav.navbar-custom ul.navbar-nav a:hover,
 nav.navbar-custom ul.navbar-nav a:visited,
@@ -117,10 +113,29 @@ nav.navbar-custom ul.dropdown-menu li.dropdown-submenu ul.dropdown-menu li.dropd
     border-color: @dropdown-border-3; 
 }
 
-/* Dropdown menu hovered link items hover color*/
+/* Dropdown menu hovered link items hover color */
 nav.navbar-custom ul.dropdown-menu > li > a:hover { 
     background: @menu-secondary; 
     color: @dropdown-background-1;
+}
+ 
+/* Dropdown submenu */
+.dropdown-submenu {
+    position: relative;
+}
+
+/* Dropdown left menu */
+.navbar-left .dropdown .dropdown-menu .dropdown-submenu .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -1px;
+}
+
+/* Dropdown right menu */
+.navbar-right .dropdown .dropdown-menu .dropdown-submenu .dropdown-menu {
+    top: 0;
+    right: 100%;
+    margin-top: -1px;
 }
 
 /* Default Notification badge color */
@@ -135,22 +150,6 @@ nav.navbar-custom span.badge {
 nav.navbar-custom span.badge.new { 
     background: @menu-secondary;  
     color: @menu-text; 
-}
-
-.dropdown-submenu {
-    position: relative;
-}
-
-.navbar-left .dropdown .dropdown-menu .dropdown-submenu .dropdown-menu {
-    top: 0;
-    left: 100%;
-    margin-top: -1px;
-}
-
-.navbar-right .dropdown .dropdown-menu .dropdown-submenu .dropdown-menu {
-    top: 0;
-    right: 100%;
-    margin-top: -1px;
 }
 
 /* Media queries for smaller devices */
