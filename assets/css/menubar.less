@@ -23,9 +23,13 @@ nav.navbar-custom a {
 
 /* Menu bar tab wrapper  */
 nav.navbar-custom ul.navbar-nav a {
-    color: @menu-text;           /* Text color of menu tabs  */   
+    color: @menu-text;              /* Text color of menu tabs  */   
     border-style: solid; 
     border-width: 0 0 2px 0; 
+    border-color: @menu-primary;    /* Border color of menu tabs */
+}
+
+nav.navbar-custom ul.navbar-nav a {
     border-color: @menu-primary;    /* Border color of menu tabs */
 }
 
@@ -59,26 +63,64 @@ nav.navbar-custom button.navbar-toggle > span.icon-bar {
     background: @menu-text; 
 }
 
-/* Dropdown menus */
+/* Dropdown menus 1st level */
 nav.navbar-custom ul.dropdown-menu { 
     border: 0; 
-    background: @dropdown-background;   /* Dropdown menu background color */
-    border-radius: 4px; 
+    background: @dropdown-background-1;   /* Dropdown menu background color */
+    border-radius: 3px; 
     margin: 4px 0; 
-    border: 2px solid @menu-secondary;  /* Dropdown menu border color */
+    border: 2px solid @dropdown-border-1;  /* Dropdown menu border color */
     box-shadow: 0 0 4px 0 #ccc; 
 }
 
-/* Dropdown menu link items */
+/* Dropdown active submenu link color*/
+nav.navbar-custom ul.dropdown-menu li.dropdown-submenu a:focus,
+nav.navbar-custom ul.dropdown-menu li.dropdown-submenu a:active { 
+    color: @menu-text;
+}
+
+/* Dropdown menu text 1st level */
 nav.navbar-custom ul.dropdown-menu > li > a { 
-    color: @dropdown-text;
-    border-color: @dropdown-background; 
+    color: @dropdown-text-1;
+    border-color: @dropdown-border-1; 
+}
+
+/* Dropdown menus 2nd level */
+nav.navbar-custom ul.dropdown-menu li.dropdown-submenu ul.dropdown-menu { 
+    border: 0; 
+    background: @dropdown-background-2;   /* Dropdown menu background color */
+    border-radius: 3px; 
+    margin: 4px 0; 
+    border: 2px solid @dropdown-border-2;  /* Dropdown menu border color */
+    box-shadow: 0 0 4px 0 #ccc; 
+}
+
+/* Dropdown menu text 2nd level */
+nav.navbar-custom ul.dropdown-menu li.dropdown-submenu ul.dropdown-menu > li > a { 
+    color: @dropdown-text-2;
+    border-color: @dropdown-border-2; 
+}
+
+/* Dropdown menus 3rd level */
+nav.navbar-custom ul.dropdown-menu li.dropdown-submenu ul.dropdown-menu li.dropdown-submenu ul.dropdown-menu { 
+    border: 0; 
+    background: @dropdown-background-3;   /* Dropdown menu background color */
+    border-radius: 3px; 
+    margin: 4px 0; 
+    border: 2px solid @dropdown-border-3;   /* Dropdown menu border color */
+    box-shadow: 0 0 4px 0 #ccc; 
+}
+
+/* Dropdown menu text 3rd level */
+nav.navbar-custom ul.dropdown-menu li.dropdown-submenu ul.dropdown-menu li.dropdown-submenu ul.dropdown-menu > li > a { 
+    color: @dropdown-text-3;
+    border-color: @dropdown-border-3; 
 }
 
 /* Dropdown menu hovered link items hover color*/
 nav.navbar-custom ul.dropdown-menu > li > a:hover { 
     background: @menu-secondary; 
-    color: @dropdown-background;
+    color: @dropdown-background-1;
 }
 
 /* Default Notification badge color */
@@ -99,9 +141,15 @@ nav.navbar-custom span.badge.new {
     position: relative;
 }
 
-.dropdown-submenu .dropdown-menu {
+.navbar-left .dropdown .dropdown-menu .dropdown-submenu .dropdown-menu {
     top: 0;
     left: 100%;
+    margin-top: -1px;
+}
+
+.navbar-right .dropdown .dropdown-menu .dropdown-submenu .dropdown-menu {
+    top: 0;
+    right: 100%;
     margin-top: -1px;
 }
 
