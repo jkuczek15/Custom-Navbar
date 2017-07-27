@@ -2,11 +2,11 @@
     <head>
         <!-- CSS -->
         <link rel="stylesheet" type="text/css" href="./assets/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="./assets/css/menubar-config.css">
-        <link rel="stylesheet" type="text/css" href="./assets/css/menubar.css">
+        <link rel="stylesheet/less" type="text/css" href="./assets/css/menubar.less" />
         <!-- Javascript -->
         <script src="./assets/js/jquery.min.js"></script>
         <script src="./assets/js/bootstrap.min.js"></script>
+        <script src="./assets/js/less.min.js"></script>
     </head>
     <body>
         <nav class="navbar navbar-custom">
@@ -21,25 +21,38 @@
             </div>
             <div class="collapse navbar-collapse" id="navbar">
                 <ul class="nav navbar-nav navbar-left">
-                    <li class="active"><a href="#">Link 1 <span class="sr-only"></span></a></li>
-                    <li class="active"><a href="#">Link 2 <span class="sr-only"></span></a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-fw fa-bell-o"></i>Notifications <span class="badge">0</span></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="#"><i class="fa fa-fw fa-tag"></i><span class="badge">label text</span> Item 1</a></li>
-                            <li><a href="#"><i class="fa fa-fw fa-thumbs-o-up"></i><span class="badge"> label text</span> Item 2</a></li>
-                            <li><a href="#"><i class="fa fa-fw fa-thumbs-o-up"></i><span class="badge"> label text</span> Item 3</a></li>
-                            <li><a href="#"><i class="fa fa-fw fa-thumbs-o-up"></i><span class="badge"> label text</span> Item 4</a></li>
-                        </ul>
-                    </li>
+                    <li data-toggle="collapse" data-target=".navbar-collapse" class="active"><a href="#">Link 1 <span class="sr-only"></span></a></li>
+                    <li data-toggle="collapse" data-target=".navbar-collapse" class="active"><a href="#">Link 2 <span class="sr-only"></span></a></li>
+                    <li data-toggle="collapse" data-target=".navbar-collapse" class="active"><a href="#">Link 3 <span class="sr-only"></span></a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Admin <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="#"><i class="fa fa-adjust"></i> Settings</a></li>
-                            <li><a href="#"><i class="fa fa-info-circle"></i> Personal Information</a></li>
-                            <li><a href="#"><i class="fa fa-inbox"></i> Inbox</a></li>
+                            <li data-toggle="collapse" data-target=".navbar-collapse"><a href="#"><i class="fa fa-adjust"></i> Settings</a></li>
+                            <li data-toggle="collapse" data-target=".navbar-collapse"><a href="#"><i class="fa fa-info-circle"></i> Personal Information</a></li>
+                            <li data-toggle="collapse" data-target=".navbar-collapse"><a href="#"><i class="fa fa-inbox"></i> Inbox</a></li>
                             <li class="divider"></li>
-                            <li><a href="#"><i class="fa fa-key"></i> Log Out</a></li>
+                            <li data-toggle="collapse" data-target=".navbar-collapse"><a href="#"><i class="fa fa-key"></i> Log Out</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Nested <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li class="dropdown-submenu">
+                                <a class="menu" tabindex="-1" href="#">1st level dropdown <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a data-toggle="collapse" data-target=".navbar-collapse" tabindex="-1" href="#">2nd level dropdown</a></li>
+                                    <li><a data-toggle="collapse" data-target=".navbar-collapse" tabindex="-1" href="#">2nd level dropdown</a></li>
+                                    <li class="dropdown-submenu">
+                                        <a class="menu" href="#">Another dropdown <span class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a data-toggle="collapse" data-target=".navbar-collapse" href="#">3rd level dropdown</a></li>
+                                            <li><a data-toggle="collapse" data-target=".navbar-collapse" href="#">3rd level dropdown</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="divider"></li>
+                            <li data-toggle="collapse" data-target=".navbar-collapse"><a href="#"><i class="fa fa-key"></i> Another Link</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -47,3 +60,13 @@
         </nav>
     </body>
 </html>
+
+<script>
+$(document).ready(function(){
+  $('.dropdown-submenu a.menu').on("click", function(e){
+    $(this).next('ul').toggle();
+    e.stopPropagation();
+    e.preventDefault();
+  });
+});
+</script>

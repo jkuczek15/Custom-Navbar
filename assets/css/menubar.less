@@ -1,26 +1,32 @@
+@import 'menubar-config.less';
+
 /* Main wrapper class for menu bar */
 nav.navbar-custom { 
- background: var(--menu-background); 
- border-color: var(--menu-background); 
+ background: @menu-primary; 
+ border-color: @menu-primary; 
  box-shadow: 0 0 12px 0 #ccc;
- position: var(--menu-position);
- border-radius: var(--border-radius);
- font-family: var(--font-family);
- font-weight: var(--font-weight);
- font-size: var(--font-size);
+ position: @menu-position;
+ height: @menu-height;
+ width: @menu-width;
+ margin: @menu-margin;
+ padding: @menu-padding;
+ border-radius: @menu-border-radius;
+ font-family: @font-family;
+ font-weight: @font-weight;
+ font-size: @font-size;
 }
 
 /* Color of links  */
 nav.navbar-custom a { 
-    color: var(--menu-text-color); 
+    color: @menu-text; 
 }
 
 /* Menu bar tab wrapper  */
 nav.navbar-custom ul.navbar-nav a {
-    color: var(--menu-text-color);           /* Text color of menu tabs  */   
+    color: @menu-text;           /* Text color of menu tabs  */   
     border-style: solid; 
     border-width: 0 0 2px 0; 
-    border-color: var(--menu-background);    /* Border color of menu tabs */
+    border-color: @menu-primary;    /* Border color of menu tabs */
 }
 
 /* Color of activated links, hover links, and dropdown divider */
@@ -29,55 +35,55 @@ nav.navbar-custom ul.navbar-nav a:visited,
 nav.navbar-custom ul.navbar-nav a:focus,
 nav.navbar-custom ul.navbar-nav a:active,
 nav.navbar-custom li.divider { 
-    background: var(--menu-secondary); 
+    background: @menu-secondary; 
 }
 
 /* Border color for hovered links */
 nav.navbar-custom ul.navbar-nav a:hover { 
-    border-color: var(--menu-secondary); 
+    border-color: @menu-secondary; 
 }
 
 /* Color of mobile menu toggle icon background */
 nav.navbar-custom button.navbar-toggle { 
-    background: var(--menu-secondary); 
+    background: @menu-secondary; 
     border-radius: 2px; 
 }
 
 /* Color of mobile menu toggle icon hover */
 nav.navbar-custom button.navbar-toggle:hover { 
-    background: var(--mobile-menu-icon-hover);
+    background: @mobile-menu-icon-hover;
 }
 
 /* Color of three icon bars for mobile phones */
 nav.navbar-custom button.navbar-toggle > span.icon-bar { 
-    background: var(--menu-text-color); 
+    background: @menu-text; 
 }
 
 /* Dropdown menus */
 nav.navbar-custom ul.dropdown-menu { 
     border: 0; 
-    background: var(--dropdown-background);   /* Dropdown menu background color */
+    background: @dropdown-background;   /* Dropdown menu background color */
     border-radius: 4px; 
     margin: 4px 0; 
-    border: 2px solid var(--menu-secondary);  /* Dropdown menu border color */
+    border: 2px solid @menu-secondary;  /* Dropdown menu border color */
     box-shadow: 0 0 4px 0 #ccc; 
 }
 
 /* Dropdown menu link items */
 nav.navbar-custom ul.dropdown-menu > li > a { 
-    color: var(--dropdown-text-color);
-    border-color: var(--dropdown-background); 
+    color: @dropdown-text;
+    border-color: @dropdown-background; 
 }
 
 /* Dropdown menu hovered link items hover color*/
 nav.navbar-custom ul.dropdown-menu > li > a:hover { 
-    background: var(--menu-secondary); 
-    color: var(--dropdown-background);
+    background: @menu-secondary; 
+    color: @dropdown-background;
 }
 
 /* Default Notification badge color */
 nav.navbar-custom span.badge { 
-    background: var(--menu-secondary); 
+    background: @menu-secondary; 
     font-weight: normal; 
     font-size: 11px;
     margin: 0 4px; 
@@ -85,14 +91,24 @@ nav.navbar-custom span.badge {
 
 /* New notification badge color */
 nav.navbar-custom span.badge.new { 
-    background: var(--menu-secondary);  
-    color: var(--menu-text-color); 
+    background: @menu-secondary;  
+    color: @menu-text; 
+}
+
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -1px;
 }
 
 /* Media queries for smaller devices */
 @media only screen and (max-width: 768px) {
     nav.navbar-custom ul.dropdown-menu > li > a { 
-        color: var(--menu-text-color);
-        border-color: var(--menu-background); 
+        color: @menu-text;
+        border-color: @menu-primary; 
     }
 }
