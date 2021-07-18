@@ -1,9 +1,7 @@
-===========================================
-===========================================
-    Customizable Bootstrap 2 Menu Bar
+
+# Customizable Bootstrap 2 Menu Bar
 https://getbootstrap.com/components/#navbar
-===========================================
-===========================================
+
 
 - All configuration settings lie under assets/css/menubar-config.less
 
